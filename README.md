@@ -29,9 +29,13 @@ A [Next.js](https://nextjs.org/) app that turns a **meeting transcript** into **
    cp .env.example .env.local
    ```
 
-   Edit `.env.local` and set `OPENROUTER_API_KEY`. Optional variables are documented in `.env.example`.
+   Edit `.env.local` and set `OPENROUTER_API_KEY` (free to create; no paid credits required for the default). The default model is OpenRouter’s **[Free Models Router](https://openrouter.ai/docs/guides/get-started/free-models-router-playground)** (`openrouter/free`), which routes each request to an available free model. Override `OPENROUTER_MODEL` if you want a specific [free model](https://openrouter.ai/models?max_price=0) (for example `meta-llama/llama-3.3-70b-instruct:free`).
+
+   Optional variables are documented in `.env.example`.
 
    Without a key, the app still runs using **local** transcript analysis.
+
+   **429 / “rate-limited upstream”:** Free tiers share limits; wait and retry, try again later, or set `OPENROUTER_MODEL` to another free model. This is not an expired key (those are usually 401/403).
 
 ## Run locally
 

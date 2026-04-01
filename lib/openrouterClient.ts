@@ -23,4 +23,9 @@ export function createOpenRouterClient(): OpenAI | null {
   });
 }
 
-export const DEFAULT_OPENROUTER_MODEL = "stepfun/step-3.5-flash:free";
+/**
+ * OpenRouter [Free Models Router](https://openrouter.ai/docs/guides/get-started/free-models-router-playground):
+ * picks an available free model per request (no paid credits). You still need an API key.
+ * Override with e.g. `meta-llama/llama-3.3-70b-instruct:free` if you want a fixed free model.
+ */
+export const DEFAULT_OPENROUTER_MODEL = "openrouter/free";
